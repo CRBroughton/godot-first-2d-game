@@ -11,5 +11,20 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
+	var velocity = Vector2.ZERO # players movement vector, this sets it to 0,0 - not moving
+	if Input.is_action_just_pressed("move_right"):
+		velocity.x += 1
+	if Input.is_action_just_pressed("move_left"):
+		velocity.x -= 1
+	if Input.is_action_just_pressed("move_down"):
+		velocity.y += 1
+	if Input.is_action_just_pressed("move_up"):
+		velocity.y -= 1
+
+	if velocity.length() > 0:
+		velocity = velocity.normalized() * speed # normalized to stop increased speed at diagonal movements
+		$AnimatedSprite.play()
+	else:
+		$AnimatedSprite.stop()
 	pass
