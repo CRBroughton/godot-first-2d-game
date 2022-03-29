@@ -14,13 +14,13 @@ func _ready():
 func _process(delta):
 	var velocity:Vector2 = Vector2.ZERO # players movement vector, this sets it to 0,0 - not moving
 	
-	if Input.is_action_just_pressed("move_right"):
+	if Input.is_action_pressed("move_right"):
 		velocity.x += 1
-	if Input.is_action_just_pressed("move_left"):
+	if Input.is_action_pressed("move_left"):
 		velocity.x -= 1
-	if Input.is_action_just_pressed("move_down"):
+	if Input.is_action_pressed("move_down"):
 		velocity.y += 1
-	if Input.is_action_just_pressed("move_up"):
+	if Input.is_action_pressed("move_up"):
 		velocity.y -= 1
 
 	if velocity.length() > 0:
@@ -31,5 +31,5 @@ func _process(delta):
 	
 	position += velocity * delta
 	position.x = clamp(position.x, 0, screen_size.x)
-	position.x = clamp(position.y, 0, screen_size.y)
+	position.y = clamp(position.y, 0, screen_size.y)
 	pass
