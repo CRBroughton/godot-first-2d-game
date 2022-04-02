@@ -14,3 +14,15 @@ func new_game():
 	score = 0
 	$Player.start($StartPosition.position)
 	$StartTimer.start()
+
+
+func _on_MobTimer_timeout():
+	pass # Replace with function body.
+
+
+func _on_ScoreTimer_timeout():
+	pass # Replace with function body.
+
+
+func _on_StartTimer_timeout():
+	pass # Replace with function body.
