@@ -5,6 +5,10 @@ signal hit # this is an emitted signal
 export var speed:int = 400 # pixels per second
 var screen_size:Vector2
 
+func start(pos):
+	position = pos
+	show()
+	$CollisionShape2D.disabled = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
