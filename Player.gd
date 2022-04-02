@@ -32,4 +32,13 @@ func _process(delta):
 	position += velocity * delta
 	position.x = clamp(position.x, 0, screen_size.x)
 	position.y = clamp(position.y, 0, screen_size.y)
+
+	if velocity.x != 0:
+		$AnimatedSprite.animation = "walk"
+		$AnimatedSprite.flip_v = false
+		# See the note below about boolean assignment.
+		$AnimatedSprite.flip_h = velocity.x < 0
+	elif velocity.y != 0:
+		$AnimatedSprite.animation = "up"
+		$AnimatedSprite.flip_v = velocity.y > 0
 	pass
