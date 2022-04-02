@@ -25,3 +25,5 @@ position = Vector2( 240, 450 )
 
 [node name="MobPath" type="Path2D" parent="."]
 curve = SubResource( 1 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="MobPath"]
