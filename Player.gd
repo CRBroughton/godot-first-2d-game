@@ -45,3 +45,11 @@ func _process(delta):
 		$AnimatedSprite.animation = "up"
 		$AnimatedSprite.flip_v = velocity.y > 0
 	pass
+
+
+func _on_Player_body_entered(body):
+	hide() # Player disappears after being hit.
+	emit_signal("hit")
+	# Must be deferred as we can't change physics properties on a physics callback.
+	$CollisionShape2D.set_deferred("disabled", true)
+	pass # Replace with function body.
