@@ -21,8 +21,9 @@ func _on_MobTimer_timeout():
 
 
 func _on_ScoreTimer_timeout():
-	pass # Replace with function body.
+	score += 1
 
 
 func _on_StartTimer_timeout():
-	pass # Replace with function body.
+    $MobTimer.start()
+    $ScoreTimer.start()
