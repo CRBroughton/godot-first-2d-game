@@ -1,5 +1,7 @@
 extends Area2D
 
+signal hit
+
 export var speed:int = 400 # pixels per second
 var screen_size:Vector2
 
